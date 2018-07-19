@@ -26,14 +26,14 @@ class Book extends Component {
         return(
             <div className="book">
                 <div className="book-top">
-                    <div className="book-cover" style={ { width: 128, height: 193, backgroundImage: `url("${ thumbnail }")` } }>
+                    <div className="book-cover" style={ { width: 128, height: 193, backgroundImage: `url( ${thumbnail ? thumbnail : "https://books.google.com/googlebooks/images/no_cover_thumb.gif"})` } }>
                     </div>
                     <div className="book-shelf-changer">
                         <select
                             value={ shelf }
                             onChange={ (event) => this.changeBookShelf(event.target.value) }
                         >
-                            <option value="none" disabled>Move to...</option>
+                            <option value="" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
                             <option value="read">Read</option>

@@ -51,8 +51,8 @@ class BooksApp extends React.Component {
     }
 
     return (
-      <div className="app">
-        <BrowserRouter>
+      <BrowserRouter>
+        <div className="app">
           <Route path="/search" render={ () => (
             //Search Page
             <Search
@@ -60,8 +60,6 @@ class BooksApp extends React.Component {
               updateBookShelf={ this.updateBookShelf }
             />
           ) } />
-        </BrowserRouter>
-        <BrowserRouter>
           <Route exact path="/" render={ () => (
             //Library Page
             <Library
@@ -69,8 +67,8 @@ class BooksApp extends React.Component {
               updateBookShelf={ this.updateBookShelf }
             />
           ) } />
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }
