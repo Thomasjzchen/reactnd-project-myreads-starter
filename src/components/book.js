@@ -20,13 +20,14 @@ class Book extends Component {
 
     render () {
         const { title, authors, imageLinks } = this.props;
-        const { thumbnail } = imageLinks;
+        let thumbnail  = imageLinks.thumbnail ? imageLinks.thumbnail : "https://books.google.com/googlebooks/images/no_cover_thumb.gif";
         const { shelf } = this.state;
+
 
         return(
             <div className="book">
                 <div className="book-top">
-                    <div className="book-cover" style={ { width: 128, height: 193, backgroundImage: `url( ${thumbnail ? thumbnail : "https://books.google.com/googlebooks/images/no_cover_thumb.gif"})` } }>
+                    <div className="book-cover" style={ { width: 128, height: 193, backgroundImage: `url(${thumbnail})` } }>
                     </div>
                     <div className="book-shelf-changer">
                         <select
